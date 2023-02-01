@@ -83,12 +83,12 @@ function Home() {
 				</div>
 			</header> */}
 			<section>
-				<div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
-					<div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
+				<div className="container flex flex-col justify-center p-4 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
+					<div className="flex flex-col justify-center lg:px-4 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
 						<h1 className="text-5xl text-primary font-bold leading-none sm:text-6xl">
 							Joshua Albert F. Villanueva
 						</h1>
-						<p className="mt-6 mb-8 text-lg sm:mb-12">
+						<p className="my-6 text-lg sm:mb-12">
 							<TypeAnimation
 								sequence={[
 									"Fullstack Web Developer", // Types 'One'
@@ -104,10 +104,13 @@ function Home() {
 								wrapper="div"
 								cursor={true}
 								repeat={Infinity}
-								style={{ fontSize: "2em" }}
+								style={{
+									fontSize: "1.4em",
+									lineHeight: "40px",
+								}}
 							/>
 						</p>
-						<div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
+						<div className="hidden sm:flex space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
 							<a
 								rel="noopener noreferrer"
 								href="#"
@@ -123,6 +126,16 @@ function Home() {
 							alt=""
 							className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
 						/>
+					</div>
+
+					<div className="p-6 sm:hidden">
+						<a
+							rel="noopener noreferrer"
+							href="#"
+							className="btn btn-secondary w-full"
+						>
+							View Resume (PDF)
+						</a>
 					</div>
 				</div>
 				<Wave mask="url(#mask)" fill="#1277b0">
