@@ -2,7 +2,7 @@ import React from "react";
 
 function Header() {
 	return (
-		<header className="p-4 ">
+		<header className="p-4 fixed top-0 z-50 ml-auto w-full">
 			<div className="container flex justify-end h-16 mx-auto">
 				<ul className="items-stretch hidden space-x-3 md:flex">
 					<li className="flex">
@@ -20,7 +20,7 @@ function Header() {
 							href="#"
 							className="flex items-center px-4 "
 						>
-							Link
+							Skills
 						</a>
 					</li>
 					<li className="flex">
@@ -29,7 +29,7 @@ function Header() {
 							href="#"
 							className="flex items-center px-4 "
 						>
-							Link
+							Project
 						</a>
 					</li>
 					<li className="flex">
@@ -38,7 +38,7 @@ function Header() {
 							href="#"
 							className="flex items-center px-4  "
 						>
-							Link
+							Contact
 						</a>
 					</li>
 				</ul>
