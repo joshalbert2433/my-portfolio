@@ -2,7 +2,7 @@ import React from "react";
 
 function Header() {
 	return (
-		<header className="p-4 fixed top-0 z-50 ml-auto w-full">
+		<header className="p-4 fixed top-0 z-50 ml-auto w-full bg-base-300">
 			<div className="container flex justify-end h-16 mx-auto">
 				<ul className="items-stretch hidden space-x-3 md:flex">
 					<li className="flex">
