@@ -3,6 +3,25 @@ module.exports = {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	daisyui: {
 		themes: [
+			{
+				aqua: {
+					...require("daisyui/src/colors/themes")[
+						"[data-theme=aqua]"
+					],
+					".bg-base-400": {
+						"background-color": "#27457c",
+					},
+					".bg-base-500": {
+						"background-color": "#13264b",
+					},
+					".text-base-400": {
+						"background-color": "#27457c",
+					},
+					".text-base-500": {
+						"background-color": "#13264b",
+					},
+				},
+			},
 			"light",
 			"dark",
 			"cupcake",
@@ -16,7 +35,6 @@ module.exports = {
 			"halloween",
 			"garden",
 			"forest",
-			"aqua",
 			"lofi",
 			"pastel",
 			"fantasy",
