@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import emailjs from "@emailjs/browser";
+
+const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
 
 function ContactForm() {
+	const form = useRef();
+
+	const sendEmail = () => {
+		emailjs
+			.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+			.then(
+				(result) => {
+					console.log(result.text);
+				},
+				(error) => {
+					console.log(error.text);
+				}
+			);
+	};
+
 	const contactFormSchema = Yup.object().shape({
 		name: Yup.string()
 			.min(3, "Name is too short!")
@@ -30,13 +50,11 @@ function ContactForm() {
 			message: "",
 		},
 		validationSchema: contactFormSchema,
-		onSubmit: () => {
-			console.log("hello");
-		},
+		onSubmit: sendEmail,
 	});
 	return (
 		<form
-			action="#"
+			ref={form}
 			autoComplete="off"
 			className="max-w-3xl mx-auto space-y-4 md:space-y-6"
 			onSubmit={handleSubmit}

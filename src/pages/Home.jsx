@@ -1,97 +1,16 @@
 import React, { useEffect, useState } from "react";
-import Wave from "react-wavify";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { TypeAnimation } from "react-type-animation";
 import { MdLocationPin } from "react-icons/md";
 import { FiAtSign } from "react-icons/fi";
-import { BiLinkExternal } from "react-icons/bi";
-import { FaGithub, FaYoutube } from "react-icons/fa";
 import MyPic from "../assets/me.jpg";
+import WaveAnimation from "../components/WaveAnimation";
+import ProjectCard from "../components/ProjectCard";
 
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import { skills, projectData } from "../myData";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-
-// import required modules
-import { Navigation, Pagination, Autoplay } from "swiper";
 import ContactForm from "../components/ContactForm";
-
-const skills = [
-	"Javascript",
-	"PHP",
-	"Python",
-	"HTML",
-	"CSS",
-	"LESS",
-	"SASS",
-	"Bootstrap",
-	"React-bootstrap",
-	"Tailwind CSS",
-	"DaisyUI",
-	"ReactJS",
-	"ExpressJS",
-	"CodeIgniter",
-	"JQuery",
-	"JQueryUI",
-	"Socket.IO",
-	"JWT",
-	"PassportJS",
-	"Formik",
-	"Yup",
-	"EJS",
-	"Vite",
-	"Swiper",
-	"NodeJS",
-	"Axios",
-	"AJAX",
-	"MySQL",
-	"MongoDB",
-	"Mongoose",
-	"OOP",
-	"MVC",
-	"RWD",
-	"REST API",
-	"Git",
-	"Github",
-	"Docker",
-	"MySQL Workbench",
-	"MongoDBCompass",
-	"Postman",
-	"Insomnia",
-];
-
-const projectData = [
-	{
-		title: "EZPC",
-		images: [
-			"https://gsi-portpolio.com/assets/img/ipos1-project.png",
-			"https://wallpaperaccess.com/full/671214.jpg",
-			"https://dotawallpapers.com/wallpaper/dotawallpapers.com-dota-2-windranger-arcana-4088-1920x1191.jpg",
-		],
-		tools_used: [
-			"ReactJS",
-			"ExpressJS",
-			"REST API",
-			"Tailwind CSS",
-			"DaisyUI",
-			"Axios",
-			"JWT",
-			"Formik",
-			"Yup",
-			"Mongoose",
-		],
-		links: {
-			live: "https://ezpc-cpm3.onrender.com/",
-			github: "https://github.com/joshalbert2433",
-			youtube:
-				"https://www.youtube.com/watch?v=LGEsM5l9U7U&list=RDLGEsM5l9U7U&start_radio=1",
-		},
-	},
-];
 
 function Home() {
 	const [isMobile, setIsMobile] = useState(false);
@@ -160,36 +79,7 @@ function Home() {
 					) : null}
 				</div>
 			</section>
-			<Wave
-				mask="url(#mask)"
-				fill="#2F5496"
-				options={{
-					height: 40,
-					amplitude: 20,
-					speed: 0.35,
-					points: isMobile ? 2 : 7,
-				}}
-			>
-				<defs>
-					<linearGradient
-						id="gradient"
-						gradientTransform="rotate(90)"
-					>
-						<stop offset="0" stopColor="black" />
-						<stop offset="0.5" stopColor="white" />
-					</linearGradient>
-					<mask id="mask">
-						<rect
-							x="0"
-							y="0"
-							width="100%"
-							height="200"
-							fill="url(#gradient)"
-						/>
-					</mask>
-				</defs>
-			</Wave>
-
+			<WaveAnimation fillColor="#2F5496" isMobile={isMobile} />
 			<section className=" bg-base-200 -mt-4 px-4">
 				<div className="pb-8 container mx-auto flex flex-col-reverse lg:grid lg:grid-cols-2 ">
 					<div className="max-w-fit rounded-lg mt-20 mb-12 lg:mt-0 lg:mb-0">
@@ -259,35 +149,8 @@ function Home() {
 				</div>
 			</section>
 			<div className="bg-base-200">
-				<Wave
-					mask="url(#mask)"
-					fill="#2A4B87"
-					options={{
-						height: 40,
-						amplitude: 20,
-						speed: 0.35,
-						points: isMobile ? 2 : 7,
-					}}
-				>
-					<defs>
-						<linearGradient
-							id="gradient"
-							gradientTransform="rotate(90)"
-						>
-							<stop offset="0" stopColor="black" />
-							<stop offset="0.5" stopColor="white" />
-						</linearGradient>
-						<mask id="mask">
-							<rect
-								x="0"
-								y="0"
-								width="100%"
-								height="200"
-								fill="url(#gradient)"
-							/>
-						</mask>
-					</defs>
-				</Wave>
+				<WaveAnimation fillColor="#2A4B87" isMobile={isMobile} />
+
 				<section
 					className=" bg-base-300 -mt-4 px-4 pb-8 "
 					id="projects"
@@ -296,113 +159,17 @@ function Home() {
 						<h2 className="text-4xl font-bold mb-12 md:text-center">
 							Projects
 						</h2>
-						{projectData.map((data, index) => (
-							<div
-								className="space-y-4 bg-base-100 p-4 rounded-md md:flex md:items-start	 md:gap-8 max-w-6xl mx-auto"
-								key={index}
-							>
-								<Swiper
-									spaceBetween={30}
-									centeredSlides={true}
-									autoplay={{
-										delay: 3500,
-										disableOnInteraction: false,
-									}}
-									pagination={{
-										clickable: true,
-									}}
-									navigation={true}
-									modules={[Autoplay, Pagination, Navigation]}
-									style={{
-										maxWidth: "400px",
-									}}
-									// className="px-12"
-								>
-									{data.images.map((image, index) => (
-										<SwiperSlide key={index}>
-											<img
-												src={image}
-												alt=""
-												className="h-80 w-full object-contain"
-											/>
-										</SwiperSlide>
-									))}
-								</Swiper>
-								<div className="space-y-4">
-									<h3 className="text-2xl font-semibold">
-										EZPC
-									</h3>
-
-									<ul className="flex flex-wrap gap-2">
-										<span className="align-middle font-semibold">
-											Tools Used:
-										</span>
-										{data.tools_used.map((tool, index) => (
-											<li
-												className="text-xs px-2 py-1 bg-base-300 rounded-md"
-												key={index}
-											>
-												{tool}
-											</li>
-										))}
-									</ul>
-									<p>
-										A personal ecommerce website is a
-										platform for selling products online,
-										offering features such as product
-										listings and shopping carts.
-									</p>
-									<div className="flex flex-col sm:flex-row gap-4 flex-wrap">
-										<a className="btn btn-sm flex gap-2 sm:w-fit">
-											<BiLinkExternal />
-											Live Demo
-										</a>
-										<a className="btn btn-sm flex gap-2 sm:w-fit">
-											<FaGithub />
-											GitHub
-										</a>
-										<a className="btn btn-sm flex gap-2 sm:w-fit">
-											<FaYoutube />
-											Video Demo
-										</a>
-									</div>
-								</div>
-							</div>
-						))}
+						<div className="flex flex-col gap-8">
+							{projectData.map((data, index) => (
+								<ProjectCard data={data} key={index} />
+							))}
+						</div>
 					</div>
 				</section>
 			</div>
 
 			<div className="bg-base-300">
-				<Wave
-					mask="url(#mask)"
-					fill="#27457C"
-					options={{
-						height: 40,
-						amplitude: 20,
-						speed: 0.35,
-						points: isMobile ? 2 : 7,
-					}}
-				>
-					<defs>
-						<linearGradient
-							id="gradient"
-							gradientTransform="rotate(90)"
-						>
-							<stop offset="0" stopColor="black" />
-							<stop offset="0.5" stopColor="white" />
-						</linearGradient>
-						<mask id="mask">
-							<rect
-								x="0"
-								y="0"
-								width="100%"
-								height="200"
-								fill="url(#gradient)"
-							/>
-						</mask>
-					</defs>
-				</Wave>
+				<WaveAnimation fillColor="#27457C" isMobile={isMobile} />
 				<section
 					className="min-h-screen bg-base-400 -mt-4 px-4  rounded-lg pt-4 pb-24"
 					id="contact"
