@@ -14,10 +14,12 @@ import { BiLinkExternal } from "react-icons/bi";
 import { FaGithub, FaYoutube } from "react-icons/fa";
 
 function ProjectCard({ data }) {
-	// console.log(data);
+	// console.log();
 	return (
-		<div className="space-y-4 bg-base-100 p-4 rounded-md md:flex md:items-start	 md:gap-8 max-w-6xl mx-auto">
+		<div className="space-y-4 lg:space-y-0 bg-base-100 p-4 rounded-md lg:flex md:items-start	 lg:gap-8 max-w-6xl mx-auto">
+			{/* <div className="sm:h-60 md:min-h-screen"> */}
 			<Swiper
+				loop={true}
 				spaceBetween={30}
 				centeredSlides={true}
 				autoplay={{
@@ -29,20 +31,30 @@ function ProjectCard({ data }) {
 				}}
 				navigation={true}
 				modules={[Autoplay, Pagination, Navigation]}
-				style={{
-					maxWidth: "400px",
+				// style={{
+				// 	maxWidth: "400px",
+				// 	height: "auto",
+				// }}
+				breakpoints={{
+					1024: {
+						width: 400,
+						// height: 800,
+					},
 				}}
+				className="lg:max-w-sm"
 			>
 				{data.images.map((image, index) => (
 					<SwiperSlide key={index}>
 						<img
 							src={image}
 							alt=""
-							className="h-80 w-full object-contain"
+							// className="h-96 w-full object-contain"
 						/>
 					</SwiperSlide>
 				))}
 			</Swiper>
+			{/* </div> */}
+
 			<div className="space-y-4">
 				<h3 className="text-2xl font-semibold">{data.title}</h3>
 
@@ -62,19 +74,32 @@ function ProjectCard({ data }) {
 				<p>{data.description}</p>
 				<div className="flex flex-col sm:flex-row gap-4 flex-wrap">
 					{data.links.live && (
-						<a className="btn btn-sm flex gap-2 sm:w-fit">
+						<a
+							href={data.links.live}
+							target="_blank"
+							className="btn btn-sm flex gap-2 sm:w-fit"
+						>
 							<BiLinkExternal />
 							Live Demo
 						</a>
 					)}
 					{data.links.github && (
-						<a className="btn btn-sm flex gap-2 sm:w-fit">
+						<a
+							href={data.links.github}
+							target="_blank"
+							className="btn btn-sm flex gap-2 sm:w-fit"
+						>
 							<FaGithub />
 							GitHub
 						</a>
 					)}
 					{data.links.youtube && (
-						<a className="btn btn-sm flex gap-2 sm:w-fit">
+						<a
+							href={data.links.youtube}
+							target="_blank"
+							// ref=""
+							className="btn btn-sm flex gap-2 sm:w-fit"
+						>
 							<FaYoutube />
 							Video Demo
 						</a>

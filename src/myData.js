@@ -42,38 +42,4 @@ const skills = [
 	"Insomnia",
 ];
 
-const projectData = [
-	{
-		title: "EZPC",
-		images: [
-			"https://gsi-portpolio.com/assets/img/ipos1-project.png",
-			"https://wallpaperaccess.com/full/671214.jpg",
-			"https://dotawallpapers.com/wallpaper/dotawallpapers.com-dota-2-windranger-arcana-4088-1920x1191.jpg",
-		],
-		description: `A personal ecommerce website is a
-        platform for selling products online,
-        offering features such as product
-        listings and shopping carts.`,
-		tools_used: [
-			"ReactJS",
-			"ExpressJS",
-			"MongoDB",
-			"REST API",
-			"Tailwind CSS",
-			"DaisyUI",
-			"Axios",
-			"JWT",
-			"Formik",
-			"Yup",
-			"Mongoose",
-		],
-		links: {
-			live: "https://ezpc-cpm3.onrender.com/",
-			github: "https://github.com/joshalbert2433",
-			youtube:
-				"https://www.youtube.com/watch?v=LGEsM5l9U7U&list=RDLGEsM5l9U7U&start_radio=1",
-		},
-	},
-];
-
-export { skills, projectData };
+export { skills };
