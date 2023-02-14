@@ -2,25 +2,41 @@ import React, { useRef } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
 const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
 
+const toastOptions = {
+	position: "top-center",
+	autoClose: 5000,
+	hideProgressBar: false,
+	closeOnClick: true,
+	pauseOnHover: true,
+	draggable: true,
+	progress: undefined,
+	theme: "colored",
+};
+
 function ContactForm() {
 	const form = useRef();
 
-	const sendEmail = () => {
-		emailjs
-			.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
-			.then(
-				(result) => {
-					console.log(result.text);
-				},
-				(error) => {
-					console.log(error.text);
-				}
+	const sendEmail = async (values, actions) => {
+		try {
+			await emailjs.sendForm(
+				SERVICE_ID,
+				TEMPLATE_ID,
+				form.current,
+				PUBLIC_KEY
 			);
+			toast.info("Your message has been sent!", toastOptions);
+			actions.setSubmitting(false);
+			actions.resetForm();
+		} catch (error) {
+			console.log(error.text);
+		}
 	};
 
 	const contactFormSchema = Yup.object().shape({
@@ -43,6 +59,7 @@ function ContactForm() {
 		handleBlur,
 		handleSubmit,
 		handleChange,
+		dirty,
 	} = useFormik({
 		initialValues: {
 			name: "",
@@ -67,6 +84,7 @@ function ContactForm() {
 					type="text"
 					name="name"
 					id="name"
+					value={values.name}
 					onChange={handleChange}
 					onBlur={handleBlur}
 					className={`input input-bordered w-full ${
@@ -85,6 +103,7 @@ function ContactForm() {
 					type="text"
 					name="email"
 					id="email"
+					value={values.email}
 					autoComplete="false"
 					onChange={handleChange}
 					onBlur={handleBlur}
@@ -106,6 +125,7 @@ function ContactForm() {
 					}`}
 					name="message"
 					id="message"
+					value={values.message}
 					onChange={handleChange}
 					onBlur={handleBlur}
 				></textarea>
@@ -121,6 +141,7 @@ function ContactForm() {
 			>
 				Send Message
 			</button>
+			<ToastContainer />
 		</form>
 	);
 }
