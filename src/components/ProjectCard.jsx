@@ -16,7 +16,7 @@ import { FaGithub, FaYoutube } from "react-icons/fa";
 function ProjectCard({ data }) {
 	// console.log();
 	return (
-		<div className="space-y-4 lg:space-y-0 bg-base-100 p-4 rounded-md lg:flex md:items-start	 lg:gap-8 max-w-6xl mx-auto">
+		<div className="mx-auto space-y-4 rounded-md bg-base-100 p-4 md:items-start lg:flex lg:gap-8  lg:space-y-0">
 			{/* <div className="sm:h-60 md:min-h-screen"> */}
 			<Swiper
 				loop={true}
@@ -40,8 +40,12 @@ function ProjectCard({ data }) {
 						width: 400,
 						// height: 800,
 					},
+					640: {
+						width: 400,
+						height: 900,
+					},
 				}}
-				className="lg:max-w-sm"
+				className="max-w-sm "
 			>
 				{data.images.map((image, index) => (
 					<SwiperSlide key={index}>
@@ -64,7 +68,7 @@ function ProjectCard({ data }) {
 					</span>
 					{data.tools_used.map((tool, index) => (
 						<li
-							className="text-xs px-2 py-1 bg-base-300 rounded-md"
+							className="rounded-md bg-base-300 px-2 py-1 text-xs"
 							key={index}
 						>
 							{tool}
@@ -72,12 +76,12 @@ function ProjectCard({ data }) {
 					))}
 				</ul>
 				<p>{data.description}</p>
-				<div className="flex flex-col sm:flex-row gap-4 flex-wrap">
+				<div className="flex flex-col flex-wrap gap-4 sm:flex-row">
 					{data.links.live && (
 						<a
 							href={data.links.live}
 							target="_blank"
-							className="btn btn-sm flex gap-2 sm:w-fit"
+							className="btn-sm btn flex gap-2 sm:w-fit"
 						>
 							<BiLinkExternal />
 							Live Demo
@@ -87,7 +91,7 @@ function ProjectCard({ data }) {
 						<a
 							href={data.links.github}
 							target="_blank"
-							className="btn btn-sm flex gap-2 sm:w-fit"
+							className="btn-sm btn flex gap-2 sm:w-fit"
 						>
 							<FaGithub />
 							GitHub
@@ -98,7 +102,7 @@ function ProjectCard({ data }) {
 							href={data.links.youtube}
 							target="_blank"
 							// ref=""
-							className="btn btn-sm flex gap-2 sm:w-fit"
+							className="btn-sm btn flex gap-2 sm:w-fit"
 						>
 							<FaYoutube />
 							Video Demo

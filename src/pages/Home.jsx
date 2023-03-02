@@ -12,6 +12,10 @@ import EzpcImage1 from "../assets/ezpc1.png";
 import EzpcImage2 from "../assets/ezpc2.png";
 import EzpcImage3 from "../assets/ezpc3.png";
 import EzpcImage4 from "../assets/ezpc4.png";
+import AraImage1 from "../assets/ara (1).png";
+import AraImage2 from "../assets/ara (2).png";
+import AraImage3 from "../assets/ara (3).png";
+import AraImage4 from "../assets/ara (4).png";
 
 import ContactForm from "../components/ContactForm";
 
@@ -57,16 +61,37 @@ function Home() {
 				youtube: "https://youtu.be/Vqg9NH-3lc8",
 			},
 		},
+		{
+			title: "AraAraAnime",
+			images: [AraImage1, AraImage2, AraImage3, AraImage4],
+			description: `A website that helps users navigate through a large library of anime content.`,
+			tools_used: [
+				"ReactJS",
+				"React-query",
+				"GogoAnime API",
+				"Tailwind CSS",
+				"DaisyUI",
+				"Axios",
+				"React-hls-player",
+				"React-icons",
+				"Swiper",
+			],
+			links: {
+				// live: "https://ezpc-cpm3.onrender.com/",
+				github: "https://github.com/joshalbert2433/EZPC",
+				youtube: "https://youtu.be/Vqg9NH-3lc8",
+			},
+		},
 	];
 
 	return (
 		<>
 			<Header />
 
-			<section className="min-h-screen flex flex-col" id="home">
-				<div className="container -mt-6 flex flex-grow flex-col justify-center items-center p-4 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
-					<div className="flex flex-col justify-center lg:px-4 text-center lg:max-w-md xl:max-w-2xl lg:text-left">
-						<h1 className="text-4xl text-primary tracking-wide font-bold leading-none sm:text-6xl">
+			<section className="flex min-h-screen flex-col" id="home">
+				<div className="container mx-auto -mt-6 flex flex-grow flex-col items-center justify-center p-4 sm:py-12 lg:flex-row lg:justify-between lg:py-24">
+					<div className="flex flex-col justify-center text-center lg:max-w-md lg:px-4 lg:text-left xl:max-w-2xl">
+						<h1 className="text-4xl font-bold leading-none tracking-wide text-primary sm:text-6xl">
 							HI, I AM JOSHUA ALBERT VILLANUEVA
 						</h1>
 						<div className="my-6 text-base sm:mb-4">
@@ -91,55 +116,55 @@ function Home() {
 								}}
 							/>
 						</div>
-						<p className="flex justify-center place-items-center gap-2 my-2 text-md lg:place-content-start sm:text-lg sm:mb-4">
+						<p className="text-md my-2 flex place-items-center justify-center gap-2 sm:mb-4 sm:text-lg lg:place-content-start">
 							<MdLocationPin />
 							Imus, Cavite
 						</p>
-						<p className="flex justify-center place-items-center gap-2 my-2 text-md lg:place-content-start sm:text-lg sm:mb-4">
+						<p className="text-md my-2 flex place-items-center justify-center gap-2 sm:mb-4 sm:text-lg lg:place-content-start">
 							<FiAtSign />
 							joshua.albert.villanueva@gmail.com
 						</p>
 					</div>
 					{MyPic ? (
-						<div className="flex items-center justify-center p-6 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+						<div className="xl:h-112 2xl:h-128 flex h-72 items-center justify-center p-6 sm:h-80 lg:mt-0 lg:h-96">
 							<img
 								src={MyPic}
 								alt="My Pic"
-								className="h-60 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 rounded-full object-cover border-8 border-base-300"
+								className="xl:h-112 2xl:h-128 h-60 rounded-full border-8 border-base-300 object-cover sm:h-80 lg:h-96"
 							/>
 						</div>
 					) : null}
 				</div>
 			</section>
 			<WaveAnimation fillColor="#2F5496" isMobile={isMobile} />
-			<section className=" bg-base-200 -mt-4 px-4">
-				<div className="pb-8 container mx-auto flex flex-col-reverse lg:grid lg:grid-cols-2 ">
-					<div className="max-w-fit rounded-lg mt-20 mb-12 lg:mt-0 lg:mb-0">
-						<div className="container max-w-5xl mx-auto">
+			<section className=" -mt-4 bg-base-200 px-4">
+				<div className="container mx-auto flex flex-col-reverse pb-8 lg:grid lg:grid-cols-2 ">
+					<div className="mt-20 mb-12 max-w-fit rounded-lg lg:mt-0 lg:mb-0">
+						<div className="container mx-auto max-w-5xl">
 							<div className="">
-								<h2 className="text-4xl font-bold mb-12">
+								<h2 className="mb-12 text-4xl font-bold">
 									My Timeline
 								</h2>
 								<div className="relative col-span-12 space-y-6 sm:col-span-9">
-									<div className="col-span-12 space-y-12 relative sm:pl-8 sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:left-1 before:dark:bg-slate-300">
-										<div className="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-secondary">
+									<div className="relative col-span-12 space-y-12 before:dark:bg-slate-300 sm:col-span-8 sm:space-y-8 sm:pl-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:left-1 sm:before:w-0.5">
+										<div className="flex flex-col before:bg-secondary sm:relative sm:before:absolute sm:before:top-2 sm:before:left-[-35px] sm:before:z-[1] sm:before:h-4 sm:before:w-4 sm:before:rounded-full">
 											<h3 className="text-xl font-semibold tracking-wide">
 												WEB DEVELOPMENT BOOTCAMP -
 												VILLAGE88
 											</h3>
-											<time className="text-xs tracking-wide uppercase text-accent">
+											<time className="text-xs uppercase tracking-wide text-accent">
 												July 2022 - Oct 2022
 											</time>
 											<span className="italic">
 												Trainee Graduate
 											</span>
 										</div>
-										<div className="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-secondary">
+										<div className="flex flex-col before:bg-secondary sm:relative sm:before:absolute sm:before:top-2 sm:before:left-[-35px] sm:before:z-[1] sm:before:h-4 sm:before:w-4 sm:before:rounded-full">
 											<h3 className="text-xl font-semibold tracking-wide">
 												CAVITE STATE UNIVERSITY - IMUS
 												CAMPUS
 											</h3>
-											<time className="text-xs tracking-wide uppercase text-accent">
+											<time className="text-xs uppercase tracking-wide text-accent">
 												2017-2023
 											</time>
 											<span className="italic">
@@ -147,12 +172,12 @@ function Home() {
 												Information Technology
 											</span>
 										</div>
-										<div className="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-secondary">
+										<div className="flex flex-col before:bg-secondary sm:relative sm:before:absolute sm:before:top-2 sm:before:left-[-35px] sm:before:z-[1] sm:before:h-4 sm:before:w-4 sm:before:rounded-full">
 											<h3 className="text-xl font-semibold tracking-wide">
 												Datacom Institute of Computer
 												Technology
 											</h3>
-											<time className="text-xs tracking-wide uppercase text-accent">
+											<time className="text-xs uppercase tracking-wide text-accent">
 												2014-2017
 											</time>
 											<span className="italic">
@@ -166,11 +191,11 @@ function Home() {
 						</div>
 					</div>
 					<div className="container mx-auto" id="skills">
-						<h2 className="text-4xl font-bold mb-12">My Skills</h2>
+						<h2 className="mb-12 text-4xl font-bold">My Skills</h2>
 						<div className=" flex flex-wrap gap-4 md:gap-6">
 							{skills.map((skill, index) => (
 								<div
-									className="py-2 px-4 bg-base-100 rounded-md font-semibold"
+									className="rounded-md bg-base-100 py-2 px-4 font-semibold"
 									key={index}
 								>
 									{skill}
@@ -184,14 +209,14 @@ function Home() {
 				<WaveAnimation fillColor="#2A4B87" isMobile={isMobile} />
 
 				<section
-					className=" bg-base-300 -mt-4 px-4 pb-8 "
+					className=" -mt-4 bg-base-300 px-4 pb-8 "
 					id="projects"
 				>
 					<div className="container mx-auto ">
-						<h2 className="text-4xl font-bold mb-12 md:text-center">
+						<h2 className="mb-12 text-4xl font-bold md:text-center">
 							Projects
 						</h2>
-						<div>
+						<div className="mx-auto flex w-full flex-col gap-4 sm:w-[500px] lg:w-[1000px]">
 							{projectData.map((data, index) => (
 								<ProjectCard data={data} key={index} />
 							))}
@@ -203,10 +228,10 @@ function Home() {
 			<div className="bg-base-300">
 				<WaveAnimation fillColor="#27457C" isMobile={isMobile} />
 				<section
-					className="min-h-screen bg-base-400 -mt-4 px-4  rounded-lg pt-4 pb-24"
+					className="bg-base-400 -mt-4 min-h-screen rounded-lg  px-4 pt-4 pb-24"
 					id="contact"
 				>
-					<h2 className="text-4xl font-bold  mb-12 md:text-center">
+					<h2 className="mb-12 text-4xl  font-bold md:text-center">
 						Contact Me
 					</h2>
 					<ContactForm />
