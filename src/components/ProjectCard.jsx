@@ -16,8 +16,7 @@ import { FaGithub, FaYoutube } from "react-icons/fa";
 function ProjectCard({ data }) {
 	// console.log();
 	return (
-		<div className="mx-auto space-y-4 rounded-md bg-base-100 p-4 md:items-start lg:flex lg:gap-8  lg:space-y-0">
-			{/* <div className="sm:h-60 md:min-h-screen"> */}
+		<div className="mx-auto space-y-4 rounded-md bg-base-100 p-4 md:items-start lg:flex lg:gap-8  lg:space-y-0 xl:w-[1200px]">
 			<Swiper
 				loop={true}
 				spaceBetween={30}
@@ -31,21 +30,17 @@ function ProjectCard({ data }) {
 				}}
 				navigation={true}
 				modules={[Autoplay, Pagination, Navigation]}
-				// style={{
-				// 	maxWidth: "400px",
-				// 	height: "auto",
-				// }}
 				breakpoints={{
 					1024: {
-						width: 400,
+						// width: 400,
 						// height: 800,
 					},
 					640: {
-						width: 400,
-						height: 900,
+						// width: 600,
+						// height: 900,
 					},
 				}}
-				className="max-w-sm "
+				className="lg:max-w-sm"
 			>
 				{data.images.map((image, index) => (
 					<SwiperSlide key={index}>

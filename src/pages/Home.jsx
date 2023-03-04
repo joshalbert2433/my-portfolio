@@ -32,7 +32,7 @@ function Home() {
 	useEffect(() => {
 		handleResize();
 		window.addEventListener("resize", handleResize);
-	});
+	}, [isMobile]);
 
 	const projectData = [
 		{
@@ -216,7 +216,9 @@ function Home() {
 						<h2 className="mb-12 text-4xl font-bold md:text-center">
 							Projects
 						</h2>
-						<div className="mx-auto flex w-full flex-col gap-4 sm:w-[500px] lg:w-[1000px]">
+						{/* <div className="mx-auto flex w-full flex-col gap-4 sm:w-[500px] lg:w-[1000px]"> */}
+
+						<div className="space-y-4">
 							{projectData.map((data, index) => (
 								<ProjectCard data={data} key={index} />
 							))}
