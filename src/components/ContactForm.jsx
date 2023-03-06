@@ -73,7 +73,7 @@ function ContactForm() {
 		<form
 			ref={form}
 			autoComplete="off"
-			className="max-w-3xl mx-auto space-y-4 md:space-y-6"
+			className="mx-auto max-w-3xl space-y-4 md:space-y-6"
 			onSubmit={handleSubmit}
 		>
 			<div>
@@ -87,7 +87,7 @@ function ContactForm() {
 					value={values.name}
 					onChange={handleChange}
 					onBlur={handleBlur}
-					className={`input input-bordered w-full ${
+					className={`input-bordered input w-full ${
 						errors.name && touched.name && "input-warning"
 					}`}
 				/>
@@ -107,7 +107,7 @@ function ContactForm() {
 					autoComplete="false"
 					onChange={handleChange}
 					onBlur={handleBlur}
-					className={`input input-bordered w-full ${
+					className={`input-bordered input w-full ${
 						errors.email && touched.email && "input-warning"
 					}`}
 				/>
@@ -120,7 +120,7 @@ function ContactForm() {
 					Message:
 				</label>
 				<textarea
-					className={`textarea textarea-bordered w-full resize-none h-32 md:h-48 ${
+					className={`textarea-bordered textarea h-32 w-full resize-none md:h-48 ${
 						errors.message && touched.message && "textarea-warning"
 					}`}
 					name="message"
@@ -136,7 +136,7 @@ function ContactForm() {
 
 			<button
 				type="submit"
-				className="btn w-full mt-6 md:w-fit"
+				className="btn mt-6 w-full md:w-fit"
 				disabled={isSubmitting}
 			>
 				Send Message

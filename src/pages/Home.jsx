@@ -38,10 +38,8 @@ function Home() {
 		{
 			title: "EZPC",
 			images: [EzpcImage1, EzpcImage2, EzpcImage3, EzpcImage4],
-			description: `A personal ecommerce website is a
-			platform for selling products online,
-			offering features such as product
-			listings and shopping carts.`,
+			description:
+				"An E-commerce website that simulates an online shopping experience that can be expanded into a more established website in the future.",
 			tools_used: [
 				"ReactJS",
 				"ExpressJS",
@@ -77,9 +75,7 @@ function Home() {
 				"Swiper",
 			],
 			links: {
-				// live: "https://ezpc-cpm3.onrender.com/",
-				github: "https://github.com/joshalbert2433/EZPC",
-				youtube: "https://youtu.be/Vqg9NH-3lc8",
+				github: "https://github.com/joshalbert2433/ara-ara-anime",
 			},
 		},
 	];
@@ -137,12 +133,12 @@ function Home() {
 				</div>
 			</section>
 			<WaveAnimation fillColor="#2F5496" isMobile={isMobile} />
-			<section className=" -mt-4 bg-base-200 px-4">
+			<section className=" mx-auto -mt-4 bg-base-200 px-4">
 				<div className="container mx-auto flex flex-col-reverse pb-8 lg:grid lg:grid-cols-2 ">
-					<div className="mt-20 mb-12 max-w-fit rounded-lg lg:mt-0 lg:mb-0">
+					<div className="mx-auto mt-20 mb-12 max-w-fit rounded-lg lg:mx-0 lg:mt-0 lg:mb-0       ">
 						<div className="container mx-auto max-w-5xl">
 							<div className="">
-								<h2 className="mb-12 text-4xl font-bold">
+								<h2 className="mb-12 text-center text-4xl font-bold lg:text-left">
 									My Timeline
 								</h2>
 								<div className="relative col-span-12 space-y-6 sm:col-span-9">
@@ -191,7 +187,9 @@ function Home() {
 						</div>
 					</div>
 					<div className="container mx-auto" id="skills">
-						<h2 className="mb-12 text-4xl font-bold">My Skills</h2>
+						<h2 className="mb-12 text-center text-4xl font-bold lg:text-left">
+							My Skills
+						</h2>
 						<div className=" flex flex-wrap gap-4 md:gap-6">
 							{skills.map((skill, index) => (
 								<div
@@ -213,10 +211,9 @@ function Home() {
 					id="projects"
 				>
 					<div className="container mx-auto ">
-						<h2 className="mb-12 text-4xl font-bold md:text-center">
+						<h2 className="mb-12 text-center text-4xl font-bold">
 							Projects
 						</h2>
-						{/* <div className="mx-auto flex w-full flex-col gap-4 sm:w-[500px] lg:w-[1000px]"> */}
 
 						<div className="space-y-4">
 							{projectData.map((data, index) => (
@@ -233,7 +230,7 @@ function Home() {
 					className="bg-base-400 -mt-4 min-h-screen rounded-lg  px-4 pt-4 pb-24"
 					id="contact"
 				>
-					<h2 className="mb-12 text-4xl  font-bold md:text-center">
+					<h2 className="mb-12 text-center  text-4xl font-bold">
 						Contact Me
 					</h2>
 					<ContactForm />
