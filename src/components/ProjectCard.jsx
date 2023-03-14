@@ -17,41 +17,44 @@ function ProjectCard({ data }) {
 	// console.log();
 	return (
 		<div className="mx-auto space-y-4 rounded-md bg-base-100 p-4 md:items-start lg:flex lg:gap-8  lg:space-y-0 xl:w-[1200px]">
-			<Swiper
-				loop={true}
-				spaceBetween={30}
-				centeredSlides={true}
-				autoplay={{
-					delay: 3500,
-					disableOnInteraction: false,
-				}}
-				pagination={{
-					clickable: true,
-				}}
-				navigation={true}
-				modules={[Autoplay, Pagination, Navigation]}
-				breakpoints={{
-					1024: {
-						// width: 400,
-						// height: 800,
-					},
-					640: {
-						// width: 600,
-						// height: 900,
-					},
-				}}
-				className="lg:max-w-sm"
-			>
-				{data.images.map((image, index) => (
-					<SwiperSlide key={index}>
-						<img
-							src={image}
-							alt=""
-							// className="h-96 w-full object-contain"
-						/>
-					</SwiperSlide>
-				))}
-			</Swiper>
+			<div>
+				<Swiper
+					loop={true}
+					spaceBetween={30}
+					centeredSlides={true}
+					autoplay={{
+						delay: 3500,
+						disableOnInteraction: false,
+					}}
+					pagination={{
+						clickable: true,
+					}}
+					navigation={true}
+					modules={[Autoplay, Pagination, Navigation]}
+					breakpoints={{
+						1024: {
+							// width: 400,
+							// height: 800,
+						},
+						640: {
+							// width: 600,
+							// height: 900,
+						},
+					}}
+					className="lg:max-w-sm"
+				>
+					{data.images.map((image, index) => (
+						<SwiperSlide key={index}>
+							<img
+								src={image}
+								alt=""
+								// className="h-96 w-full object-contain"
+							/>
+						</SwiperSlide>
+					))}
+				</Swiper>
+			</div>
+
 			{/* </div> */}
 
 			<div className="space-y-4">

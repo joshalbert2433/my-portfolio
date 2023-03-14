@@ -16,6 +16,10 @@ import AraImage1 from "../assets/ara (1).png";
 import AraImage2 from "../assets/ara (2).png";
 import AraImage3 from "../assets/ara (3).png";
 import AraImage4 from "../assets/ara (4).png";
+import Countries1 from "../assets/countries (1).png";
+import Countries2 from "../assets/countries (2).png";
+import Countries3 from "../assets/countries (3).png";
+import Countries4 from "../assets/countries (4).png";
 
 import ContactForm from "../components/ContactForm";
 
@@ -76,6 +80,24 @@ function Home() {
 			],
 			links: {
 				github: "https://github.com/joshalbert2433/ara-ara-anime",
+			},
+		},
+		{
+			title: "REST Countries API with color theme switcher",
+			images: [Countries1, Countries2, Countries3, Countries4],
+			description: `A frontend mentor challenge that allows users to search and filter countries with details.`,
+			tools_used: [
+				"ReactJS",
+				"React-query",
+				"REST Countries API",
+				"Tailwind CSS",
+				"DaisyUI",
+				"Axios",
+				"React-icons",
+			],
+			links: {
+				github: "https://github.com/joshalbert2433/rest-coutries-api-with-theme-switcher",
+				live: "https://rest-coutries-api-with-theme-switcher.vercel.app/",
 			},
 		},
 	];
