@@ -4,6 +4,8 @@ const skills = [
 	"Python",
 	"HTML",
 	"CSS",
+	"Laravel",
+	"NextJS",
 	"LESS",
 	"SASS",
 	"Bootstrap",

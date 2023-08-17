@@ -20,6 +20,11 @@ import Countries1 from "../assets/countries (1).png";
 import Countries2 from "../assets/countries (2).png";
 import Countries3 from "../assets/countries (3).png";
 import Countries4 from "../assets/countries (4).png";
+import Uploader1 from "../assets/uploader (1).png";
+import Uploader2 from "../assets/uploader (2).png";
+import Uploader3 from "../assets/uploader (3).png";
+import Quote1 from "../assets/quote (1).png";
+import Quote2 from "../assets/quote (2).png";
 
 import ContactForm from "../components/ContactForm";
 
@@ -80,6 +85,7 @@ function Home() {
 			],
 			links: {
 				github: "https://github.com/joshalbert2433/ara-ara-anime",
+				live: "https://ara-ara-anime.vercel.app/",
 			},
 		},
 		{
@@ -98,6 +104,33 @@ function Home() {
 			links: {
 				github: "https://github.com/joshalbert2433/rest-coutries-api-with-theme-switcher",
 				live: "https://rest-coutries-api-with-theme-switcher.vercel.app/",
+			},
+		},
+		{
+			title: "Image Uploader",
+			images: [Uploader1, Uploader2, Uploader3],
+			description: `A devchallenges.io challenge that allows users to upload image and copy the uploaded image link.`,
+			tools_used: [
+				"ReactJS",
+				"Axios",
+				"ExpressJS",
+				"Tailwind CSS",
+				"Multer",
+				"Sharp",
+			],
+			links: {
+				github: "https://github.com/joshalbert2433/image-uploader",
+				live: "https://image-uploader-iota-five.vercel.app/",
+			},
+		},
+		{
+			title: "Quote Generator",
+			images: [Quote1, Quote2],
+			description: `A devchallenges.io challenge that allows users generate random quotes and browse all the available quote for that author.`,
+			tools_used: ["ReactJS", "Axios", "React-query", "Tailwind CSS"],
+			links: {
+				github: "https://github.com/joshalbert2433/random-quote",
+				live: "https://random-quote-orcin.vercel.app/",
 			},
 		},
 	];
